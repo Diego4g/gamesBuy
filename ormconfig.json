@@ -1,9 +1,8 @@
 {
     "type": "postgres",
-    "port": 5432,
     "host": "localhost",
     "username": "postgres",
-    "password": "docker",
+    "password": "123",
     "database": "gamesBuy",
     "migrations": [
         "./src/database/migrations/*.ts"
