@@ -1,5 +1,6 @@
-import { Column, CreateDateColumn, Entity, PrimaryColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, ManyToMany, PrimaryColumn } from "typeorm";
 import { v4 as uuidv4 } from "uuid";
+import { User } from "../../users/entities/User";
 
 @Entity("games")
 class Game {
@@ -15,6 +16,9 @@ class Game {
 
     @CreateDateColumn()
     created_at: Date;
+
+    @ManyToMany(() => User, (user) => user.games)
+    users: User[];
 
     constructor() {
         if (!this.id) {
